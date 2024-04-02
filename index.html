@@ -94,6 +94,7 @@
             color: white; /* Change text color to white */
             text-decoration: none; /* Remove underline */
             font-weight: bold;
+            display: inline-block; /* Ensure arrow aligns correctly */
         }
         .dropdown a:hover {
             color: #ff0000; /* Change color on hover */
@@ -129,6 +130,10 @@
                 transform: translateY(0);
             }
         }
+        /* Arrow styles */
+        .dropdown-arrow {
+            margin-left: 5px;
+        }
     </style>
 </head>
 <body>
@@ -138,6 +143,7 @@
     <div class="dropdown">
         <span class="wobble">
             <a href="index.html">Home</a>
+            <span class="dropdown-arrow">&#9662;</span> <!-- Unicode arrow character -->
         </span>
         <div class="dropdown-content">
             <a href="best 2by2.html">Best 2x2</a>
