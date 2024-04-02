@@ -129,50 +129,6 @@
                 transform: translateY(0);
             }
         }
-
-        /* Cube container */
-        #cube-container {
-            width: 200px;
-            height: 200px;
-            perspective: 600px;
-            margin-top: 20px;
-            position: absolute;
-            top: 50%;
-            right: 20px;
-            transform: translateY(-50%);
-        }
-
-        /* Individual cube pieces */
-        .cube {
-            width: 100px;
-            height: 100px;
-            position: relative;
-            transform-style: preserve-3d;
-            animation: rotate-cube 5s linear infinite; /* Cube rotation animation */
-        }
-
-        /* Cube faces */
-        .cube > div {
-            position: absolute;
-            width: 100px;
-            height: 100px;
-            border: 2px solid #000;
-            box-sizing: border-box;
-        }
-
-        /* Cube face colors */
-        .front { background-color: #ff6347; transform: translateZ(50px); }
-        .back { background-color: #ffa500; transform: rotateY(180deg) translateZ(50px); }
-        .right { background-color: #228b22; transform: rotateY(90deg) translateZ(50px); }
-        .left { background-color: #1e90ff; transform: rotateY(-90deg) translateZ(50px); }
-        .top { background-color: #ffff00; transform: rotateX(90deg) translateZ(50px); }
-        .bottom { background-color: #ffffff; transform: rotateX(-90deg) translateZ(50px); }
-
-        /* Cube rotation animation */
-        @keyframes rotate-cube {
-            0% { transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg); }
-            100% { transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg); }
-        }
     </style>
 </head>
 <body>
@@ -204,22 +160,6 @@
             <p>Pyraminx: A pyramid-shaped puzzle. It's intuitive and easy to solve, making it popular among beginners and enthusiasts alike.</p>
         </div>
     </main>
-    <div id="cube-container">
-        <div class="cube">
-            <!-- Front -->
-            <div class="front"></div>
-            <!-- Back -->
-            <div class="back"></div>
-            <!-- Right -->
-            <div class="right"></div>
-            <!-- Left -->
-            <div class="left"></div>
-            <!-- Top -->
-            <div class="top"></div>
-            <!-- Bottom -->
-            <div class="bottom"></div>
-        </div>
-    </div>
     <footer>
         <div class="contact">
             <a href="https://www.facebook.com/SAGA0064" target="_blank">
