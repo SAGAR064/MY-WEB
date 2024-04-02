@@ -138,6 +138,62 @@
                 transform: translateY(0);
             }
         }
+        /* Styles for the loading overlay */
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+            z-index: 9999; /* Ensure it appears on top of other content */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(10px); /* Apply blur effect to the background */
+        }
+
+        /* Styles for the cube loading icon */
+        .cube-loader {
+            width: 50px;
+            height: 50px;
+            position: relative;
+            transform-style: preserve-3d;
+            animation: rotate-cube 1.5s infinite linear;
+        }
+
+        .cube-loader div {
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            border: 2px solid #000;
+            box-sizing: border-box;
+        }
+
+        .cube-loader .front { background-color: #ff6347; transform: translateZ(25px); }
+        .cube-loader .back { background-color: #ffa500; transform: rotateY(180deg) translateZ(25px); }
+        .cube-loader .right { background-color: #228b22; transform: rotateY(90deg) translateZ(25px); }
+        .cube-loader .left { background-color: #1e90ff; transform: rotateY(-90deg) translateZ(25px); }
+        .cube-loader .top { background-color: #ffff00; transform: rotateX(90deg) translateZ(25px); }
+        .cube-loader .bottom { background-color: #ffffff; transform: rotateX(-90deg) translateZ(25px); }
+
+        /* Cube rotation animation */
+        @keyframes rotate-cube {
+            0% { transform: rotateX(0deg) rotateY(0deg); }
+            100% { transform: rotateX(360deg) rotateY(360deg); }
+        }
+
+        /* Additional styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* Hide scrollbars while loading */
+        }
+        main {
+            /* Your main content styles */
+            padding: 20px;
+        }
     </style>
 </head>
 <body>
@@ -193,4 +249,23 @@
         </div>
     </footer>
 </body>
+<!-- Loading overlay -->
+<div class="loading-overlay">
+    <div class="cube-loader">
+        <div class="front"></div>
+        <div class="back"></div>
+        <div class="right"></div>
+        <div class="left"></div>
+        <div class="top"></div>
+        <div class="bottom"></div>
+    </div>
+
+<script>
+    // Simulate content loading
+    window.addEventListener('load', function() {
+        var loadingOverlay = document.querySelector('.loading-overlay');
+        loadingOverlay.style.display = 'none'; // Hide loading overlay when content is loaded
+        document.body.style.overflow = 'auto'; // Restore scrolling
+    });
+</script>
 </html>
